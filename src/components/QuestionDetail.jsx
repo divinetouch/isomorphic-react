@@ -31,7 +31,7 @@ export const QuestionDetailDisplay = ({title,body,answer_count,tags})=>(
             </div>
         }
     </div>
-);
+)
 
 export const mapStateToProps = (state,ownProps)=>({
     /**

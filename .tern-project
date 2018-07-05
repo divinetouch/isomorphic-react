@@ -1,0 +1,16 @@
+{
+    "libs": [
+        "browser",
+        "ecma5",
+        "ecma6",
+        "react"
+    ],
+    "loadEagerly": [
+        "./node_modules/react/index.js",
+        "./src/**/*.js"
+    ],
+    "plugins": {
+        "node": {},
+        "es_modules": {}
+    }
+}

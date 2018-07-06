@@ -1,49 +1,42 @@
-<<<<<<< HEAD
+import { mapStateToProps, QuestionDetailDisplay } from '../QuestionDetail.jsx'
+import renderer from 'react-test-renderer'
+import React from 'react'
+
 describe('The Question Detail Component', function() {
-   it('Should not regress', function() {
-       
-   })
-})
-
-=======
-import { mapStateToProps, QuestionDetailDisplay } from '../QuestionDetail';
-import renderer from 'react-test-renderer';
-import React from 'react';
-
-describe(`The Question Detail Component`,()=>{
-    describe(`The Container Element`,()=>{
-        describe(`mapStateToProps`,()=>{
-            it("should map the state to props correctly",()=>{
+    describe(`The Container Element`, () => {
+        describe('mapStateToProps', function() {
+            it('should map the state to props correctly', () => {
                 const sampleQuestion = {
-                    question_id:42,
-                    body:"Space is big"
-                };
+                    question_id: 42,
+                    body: "Space is big"
+                }
                 const appState = {
-                    questions:[sampleQuestion]
-                };
+                    questions: [sampleQuestion]
+                }
                 const ownProps = {
-                    question_id:42,
-                };
-                const componentState = mapStateToProps(appState,ownProps);
-                console.log(componentState);
-                expect(componentState).toEqual(sampleQuestion);
-            });
-        });
-    });
+                    question_id: 42
+                }
+                const componentState = mapStateToProps(appState, ownProps)
+                expect(componentState).toEqual(sampleQuestion)
+            })    
+        })
+        
+    })
 
-    describe(`The display element`,()=>{
-        it(`Should not regress`,()=>{
+    describe('The display element', function() {
+        it('Should not regress', function() {
             const tree = renderer.create(
                 <QuestionDetailDisplay
-                    title="THANKS!"
-                    body="43"
+                    title="The meaning of life"
+                    body="42"
                     answer_count={0}
-                    tags={[`hitchhiking`]}
+                    tags={['hitchhiking']}
                 />
-            );
+            )
 
-            expect(tree.toJSON()).toMatchSnapshot();
-        });
-    });
-});
->>>>>>> 91d231d262335527d06e0c1aba4adbd8898eec43
+            expect(tree.toJSON()).toMatchSnapshot()
+        })
+    })
+})
+
+
